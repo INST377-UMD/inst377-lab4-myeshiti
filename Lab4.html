@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+    <title>INST377 - Lab 4</title>
+    <link rel="stylesheet" href="lab4.css">
+</head>
+<body>
+        <section>
+            <h1 id="word">Lab INST 377</h1>
+        </section>
+        <div class="main-container">
+
+            <div class="left-container">
+    
+                <section>
+                    <br>
+                    <form name="contactForm" onsubmit="return formValidation()">
+                        <label for="firstName">First Name:</label>
+                        <input type="text" id="firstName" placeholder="Enter your name" required>
+                        <input type="submit" value="Alert Me">
+                    </form>
+                </section>
+
+                <section>
+                    <br>
+                    <form name="textForm" onsubmit="return validateText()">
+                        <label for="testText">Text Tester:</label>
+                        <input type="text" id="testText" required>
+                        <input type="submit" value="Validate Text">
+                    </form>
+                </section>
+            </div>
+    
+            <div class="right-container">
+                <section>
+                    <button onclick="changeColor()">Change Color</button>
+                </section>
+
+                <section>
+                    <button onclick="addText()">Add Text</button>
+                </section>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            function formValidation() {
+                const name = document.contactForm.firstName.value;
+                if (name === "") {
+                    alert('Enter a First Name!!!');
+                    return false;
+                }
+                alert('Hi ' + name + '!');
+                return true;
+            }
+
+            function changeColor() {
+                const body = document.body;
+                if (body.style.backgroundColor === 'blue') {
+                    body.style.backgroundColor = 'green';
+                } else {
+                    body.style.backgroundColor = 'blue';
+                }
+            }
+
+            function validateText() {
+                const text = document.textForm.testText.value;
+                const validationRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                if (validationRegex.test(text)) {
+                    alert('Text contains special characters!');
+                    return false;
+                }
+                alert('Text is valid!');
+                return true;
+            }
+
+            function addText() {
+                const heading = document.getElementById('word');
+                heading.innerHTML += ' Add Text';
+            }
+        </script>
+    
+    </body>
+    </html>

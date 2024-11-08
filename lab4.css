@@ -1,0 +1,39 @@
+    section {
+        border: 2px solid black;
+        padding: 10px;
+        margin: 20px 0;
+        background-color: purple;
+        color: White;
+        border: 1px solid black;
+        border-radius: 5px
+        
+        
+    }
+    body {
+        font-family: Arial, sans-serif;
+        background-color: lightblue
+        
+    }
+
+    .main-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    }
+
+    .left-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    }
+
+    .right-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    }
+
+    section {
+    flex: 1;
+    }
